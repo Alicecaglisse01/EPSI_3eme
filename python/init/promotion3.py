@@ -1,6 +1,5 @@
-import argparse
 import datetime
-
+import os
 
 def calculer_age(date_naissance):
     today = datetime.date.today()
@@ -15,18 +14,11 @@ def calculer_age(date_naissance):
         mois += 12
     return age, mois
 
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+csv_file = os.path.join(base_dir, 'fichiers', 'promotion_B3_B.csv')
 
-parser = argparse.ArgumentParser()
-parser.add_argument("-f", "--path", type=str)
-
-args = parser.parse_args()
-file = args.path
-
-if file == None:
-    file = "promotion_B3_B.csv"
-
-# Boucle de lecture ligne à ligne
-with open(file, "r") as file:
+# Utilisez csv_file pour ouvrir le fichier
+with open(csv_file, "r") as file:
     nbrf = nbrh = nbro = 0
     # On saute la première ligne
     next(file)

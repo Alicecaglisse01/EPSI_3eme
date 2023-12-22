@@ -1,6 +1,0 @@
-image: python:3.12
-
-before_script:
-  - python --version
-  - ls -al
-  - echo "ça fonctionne !!!"
