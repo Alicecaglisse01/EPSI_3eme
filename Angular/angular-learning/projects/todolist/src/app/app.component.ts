@@ -1,39 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { TODOS } from './mock-todo';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, TodoListComponent],
   template: `
-    <div class="container">
-      <h1>Liste des choses à faire</h1>
-      <ul>
-        <li>{{selectTodo(0).title}}</li>
-        <li>{{selectTodo(1).title}}</li>
-        <li>{{selectTodo(2).title}}</li>
-        <li>{{selectTodo(3).title}}</li>
-        <li>{{selectTodo(4).title}}</li>
-        <li>{{selectTodo(5).title}}</li>
-        <li>{{selectTodo(6).title}}</li>
-        <li>{{selectTodo(7).title}}</li>
-        <li>{{selectTodo(8).title}}</li>
-        <li>{{selectTodo(9).title}}</li>
-      </ul>
-    </div>
+  <div class="container">
+    <todo-list/>
+  </div>
   `,
   styles: [],
 })
 export class AppComponent {
-  todoList = TODOS;
 
-  constructor(){
-    console.table(this.todoList)
-  }
-
-  selectTodo(id : number){
-    return this.todoList[id]
-  }
 }

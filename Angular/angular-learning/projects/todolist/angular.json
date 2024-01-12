@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "todolist": {
+    "list-project": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/todolist",
+            "outputPath": "dist/list-project",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -57,10 +57,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "todolist:build:production"
+              "buildTarget": "list-project:build:production"
             },
             "development": {
-              "buildTarget": "todolist:build:development"
+              "buildTarget": "list-project:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,7 +68,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "todolist:build"
+            "buildTarget": "list-project:build"
           }
         },
         "test": {
@@ -93,6 +93,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "b47c5a72-a076-4945-977a-817d5668f891"
   }
 }
